@@ -129,13 +129,14 @@ async function main() {
     const gameFile = await zipDeployFolder().catch(console.error);
     console.log('Publishing', version, `version (${gameFile.length/1000} kB)`);
 
+    const gameId = args.values.gameId;
     const buildData = new FormData();
-    buildData.append( 'game_slug', args.values.gameId );
+    buildData.append( 'game_slug', gameId );
     buildData.append( 'game_file', gameFile, 'game.zip' );
     buildData.append( 'version', version );
     buildData.append( 'sdk_version', Number.parseInt(args.values.sdkVersion || 1) );
 
-    console.log(`Publishing ${version} version of ${game} to HeyVR.`);
+    console.log(`Publishing ${version} version of ${gameId} to HeyVR.`);
     axios({
         method: 'post',
         url: 'https://heyvr.io/api/developer/game/upload-build',
