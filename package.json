@@ -1,6 +1,6 @@
 {
   "name": "heyvr-cli",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "HeyVR CLI command for publishing from CI.",
   "author": "Jonathan Hale",
   "main": "index.js",
