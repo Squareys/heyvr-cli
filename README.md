@@ -6,13 +6,21 @@ Easy to use CLI tool to publish WebXR games to
 The command will check all arguments upfront to
 reduce CI config iterations.
 
+## Setup
+
+Install the command in your CI scripts:
+
+```sh
+npm i -g heyvr-cli
+```
+
 ## Authentication
 
 The command expects a `HEYVR_ACCESS_TOKEN` variable
 in the environment. Make sure to keep it safe via
 CI secrets.
 
-Create an access token [in your developer accountsettings](https://heyvr.io/account/settings).
+Create an access token [in your developer account settings](https://heyvr.io/account/settings).
 
 ## Usage
 

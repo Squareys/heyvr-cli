@@ -2,14 +2,29 @@
   "name": "heyvr-cli",
   "version": "0.1.0",
   "description": "HeyVR CLI command for publishing from CI.",
+  "author": "Jonathan Hale",
   "main": "index.js",
   "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/Squares/heyvr-cli/#readme",
   "scripts": {
-    "publish:heyvr": "node index.js"
+      "publish:heyvr": "node index.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Squareys/heyvr-cli.git"
+  },
+  "keywords": [
+      "webxr",
+      "heyvr",
+      "cli"
+  ],
+  "bugs": {
+      "url": "https://github.com/Squareys/heyvr-cli/issues"
   },
   "dependencies": {
-    "archiver": "^6.0.0",
-    "axios": "^1.4.0"
+      "archiver": "^6.0.0",
+      "axios": "^1.4.0"
   },
   "bin": {
       "heyvr": "./index.js"
