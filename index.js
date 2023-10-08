@@ -110,7 +110,7 @@ async function main() {
         errors.push("'HEYVR_ACCESS_TOKEN' environment variable not set.");
     }
 
-    if(errors) {
+    if(errors.length != 0) {
         console.error("Found " + errors.length + " errors:");
         for(const e of errors) {
             console.error("✘ " + e);
