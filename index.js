@@ -88,14 +88,14 @@ async function main() {
     const args = parseArgs({ options });
 
     const errors = new Array();
-    if(!args.version) {
+    if(!args.values.version) {
         errors.push("Missing 'version' argument.");
     }
-    if(!args.gameId) {
+    if(!args.values.gameId) {
         errors.push("Missing 'gameId' argument.");
     }
 
-    const path = args.path || (fs.existsSync('deploy') && 'deploy')
+    const path = args.values.path || (fs.existsSync('deploy') && 'deploy')
         || (fs.existsSync('public') && 'public');
     if(!path) {
         errors.push("No such path: deploy/ or public/\nPass a path via --path argument.");
@@ -130,10 +130,10 @@ async function main() {
     console.log('Publishing', version, `version (${gameFile.length/1000} kB)`);
 
     const buildData = new FormData();
-    buildData.append( 'game_slug', args.gameId );
+    buildData.append( 'game_slug', args.values.gameId );
     buildData.append( 'game_file', gameFile, 'game.zip' );
     buildData.append( 'version', version );
-    buildData.append( 'sdk_version', Number.parseInt(args.sdkVersion || 1) );
+    buildData.append( 'sdk_version', Number.parseInt(args.values.sdkVersion || 1) );
 
     console.log(`Publishing ${version} version of ${game} to HeyVR.`);
     axios({
