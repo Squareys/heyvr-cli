@@ -126,7 +126,7 @@ async function main() {
         version = 'minor';
     }
 
-    const gameFile = await zipDeployFolder().catch(console.error);
+    const gameFile = await zipDeployFolder(path).catch(console.error);
     console.log('Publishing', version, `version (${gameFile.length/1000} kB)`);
 
     const gameId = args.values.gameId;
