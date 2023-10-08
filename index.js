@@ -49,6 +49,7 @@ function zipDeployFolder(path) {
         archive.pipe(output);
 
         /* Add contents of given path, deploy or public */
+        archive.directory(path, false);
         archive.on('error', rej);
 
         output.on('data', (d) => {
